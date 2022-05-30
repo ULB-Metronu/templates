@@ -1,0 +1,147 @@
+\documentclass[a0paper,portrait]{baposter}
+
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc} %unicode support
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+
+\usepackage{multicol} % Required for multiple columns
+\usepackage{siunitx}
+\usepackage{multirow} %
+\usepackage{booktabs}
+\usepackage[flushleft]{threeparttable}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{url}
+\usepackage{framed}
+
+\selectcolormodel{cmyk}
+
+\graphicspath{{figures/}} % Directory in which figures are stored
+
+\newcommand{\compresslist}{%
+\setlength{\itemsep}{0pt}%
+\setlength{\parskip}{1pt}%
+\setlength{\parsep}{0pt}%
+}
+
+\newenvironment{boenumerate}
+  {\begin{enumerate}\renewcommand\labelenumi{\textbf\theenumi.}}
+  {\end{enumerate}}
+
+\newenvironment{boitem}
+    {\begin{itemize}\renewcommand\labelitemi{$\bullet$}}
+    {\end{itemize}}
+\setlength{\columnseprule}{1pt}
+
+\begin{document}
+
+\definecolor{white}{cmyk}{0,0,0,0}
+\definecolor{darkgreen}{cmyk}{0.8,0,0.8,0.45}
+\definecolor{lightgreen}{cmyk}{0.8,0,0.8,0.25}
+\definecolor{lightblue}{rgb}{0.2,0.6,1}
+\definecolor{lightlightblue}{rgb}{0.76,0.875,0.984}
+\definecolor{lightred1}{rgb}{0.8,0.0,0.0}
+\definecolor{lightred2}{rgb}{1.0,0.4,0.0}
+\definecolor{lightblue1}{rgb}{0.3,0.3,1.0}
+\definecolor{navyblue}{rgb}{0.0, 0.0, 0.5}
+\definecolor{lightgray}{rgb}{0.7,0.7,0.7}
+
+\begin{poster}
+{
+grid=false,
+columns=5,
+headerborder=open, % Adds a border around the header of content boxes
+colspacing=0.85em, % Column spacing
+bgColorOne=white, % Background color for the gradient on the left side of the poster
+bgColorTwo=white, % Background color for the gradient on the right side of the poster
+borderColor=blue, % Border color
+headerColorOne=lightblue, % Background color for the header in the content boxes (left side)
+headerColorTwo=lightblue, % Background color for the header in the content boxes (right side)
+headerFontColor=white, % Text color for the header text in the content boxes
+boxColorOne=white, % Background color of the content boxes
+textborder=rounded, %rectangle, % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
+eyecatcher=true, % Set to false for ignoring the left logo in the title and move the title left
+headerheight=0.15\textheight, % Height of the header
+headershape=rounded, % Specify the rounded corner in the content box headers, can be: rectangle, small-rounded, roundedright, roundedleft or rounded
+headershade=plain,
+headerfont=\Large\textsf, % Large, bold and sans serif font in the headers of content boxes
+%textfont={\setlength{\parindent}{1.5em}}, % Uncomment for paragraph indentation
+linewidth=1.5pt % Width of the border lines around content boxes
+}
+  {
+  \begin{minipage}{0.12\textwidth}
+  % \begin{framed}
+  \begin{tabular}{@{} l l @{}}
+    \includegraphics[width=0.7\linewidth]{logos/logo_ulb.png} \\[0.5cm]
+    \includegraphics[width=0.7\linewidth]{logos/qr-code.eps}
+  \end{tabular}
+  % \end{framed}
+  \end{minipage}
+  }
+%
+%----------------------------------------------------------------------------------------
+%	TITLE AND AUTHOR NAME
+%----------------------------------------------------------------------------------------
+%
+{
+\LARGE\bfseries{
+Title}} % Poster title
+{\normalsize\textbf{\vspace{0.2em}\\
+\hspace{1cm}
+Authors \\ Location}
+\vspace{0.2em}\\[0.3cm]
+\small\itshape
+Affiliations\\
+\textsuperscript{1} Second affiliation\\
+\texttt{mail}
+}
+{
+\begin{minipage}{0.15\textwidth}
+% \begin{framed}
+  \hspace{-0.35cm}
+  \begin{tabular}{@{} r r @{}}
+  % \includegraphics[width=1.15\linewidth, height=1.4cm]{logos/logo_caspro.eps}\\[0.5cm]
+  % \includegraphics[width=\linewidth]{logos/logo_ipac.png}
+  \end{tabular}
+% \end{framed}
+\end{minipage}
+} % University/lab logo
+\headerbox{}{name=introduction,column=0,row=0, span=5, headershape=rectangle, boxheaderheight=0em, textborder=rectangle, boxColorOne = lightlightblue}
+{
+\small
+Abstract
+}
+
+\headerbox{1. }{name=cc1,column=0,span=3,below=introduction}{}
+
+
+\headerbox{2.}{name=cc2,column=3,span=2,below=introduction}{}
+
+\headerbox{3. }{name=cc4,column=0,span=5, below=cc1}{}
+
+\headerbox{}{name=acknowledgments,column=0,below=cc4,span=2, headershape=rectangle, boxheaderheight=0em, textborder=rectangle}{
+\small
+Acknowledgments}
+\headerbox{}{name=references,column=2,span=3,below=cc4, headershape=rectangle, boxheaderheight=0em, textborder=rectangle}{
+\renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
+\footnotesize
+\begin{thebibliography}{9}
+\bibitem{paper}
+Author \emph{et al.}. \textquotedblleft{Title}\textquotedblright
+
+\end{thebibliography} % Use sample.bib as the bibliography file
+}
+
+
+\end{poster}
+
+\end{document}
